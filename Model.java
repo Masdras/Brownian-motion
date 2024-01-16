@@ -16,7 +16,16 @@ public class Model {
             matrix[Math.round(pos[1])][Math.round(pos[0])] = p;
             particles[i]=p;
         }
-        
+        for(int i=0;i<25;i++) {
+            for(int j=0;j<25;j++) {
+                if((i+j)<10) {
+                    Particle p = new Particle(width/2+i, height/2+j, width, height);
+                    p.stopmoving();
+                    float[] pos = p.getPos();
+                    matrix[Math.round(pos[1])][Math.round(pos[0])] = p;
+                }
+            }
+        }
     }
     public void update(float L) {
         for(int i=0; i<particles.length;i++) {

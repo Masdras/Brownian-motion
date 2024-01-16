@@ -13,12 +13,12 @@ public class Frame extends JFrame implements ActionListener{
     Panel panel;
     JButton button;
     JSlider slider;
-    Frame(String title,int width,int height, int n) {
+    Frame(String title,int width,int height, int n, Model mod) {
         setDefaultCloseOperation(3);
         pack();
         setBounds(0,0,width+15,height+38);
         setResizable(false);
-        mod = new Model(n,width,height);
+        this.mod = mod;
         panel = new Panel(width,height,n,mod);
         button = new JButton("Start");
         button.setBounds(0, 0, 100,50);
@@ -30,10 +30,11 @@ public class Frame extends JFrame implements ActionListener{
     }
 
     public static void main(String[] args) {
-        int n = 20000;
+        int n = 10000;
         int width = 500;
         int height = 500;  
-        Frame frame = new Frame("Brownsk Rörelse",width,height, n);
+        Model mod = new Model(n,width,height);
+        Frame frame = new Frame("Brownsk Rörelse",width,height, n, mod);
         frame.setVisible(true);
 
     }

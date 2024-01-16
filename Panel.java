@@ -7,7 +7,7 @@ import java.awt.image.BufferedImage;
 public class Panel extends JPanel {
     private Model mod;
     private BufferedImage canvas;
-    Panel(int width,int height, int n,Model mod) {
+    Panel(int width,int height, int n, Model mod) {
         this.mod = mod;
         canvas = new BufferedImage(width,height,BufferedImage.TYPE_INT_ARGB);
         fillcanvas(Color.BLACK);
